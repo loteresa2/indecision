@@ -43,7 +43,7 @@ const Header = (props) => {
   return (
     <div>
       <h1>{props.title}</h1>
-      <h2>{props.subtitle}</h2>
+      {props.subtitle && <h2>{props.subtitle}</h2>}
     </div>
   )
 }
@@ -104,6 +104,10 @@ const User = (props) => {
       <p>Age: {props.age}</p>
     </div>
   )
+}
+
+Header.defaultProps = {
+  title: 'Indecision app'
 }
 
 ReactDOM.render(<Indecision />, document.getElementById('app'));

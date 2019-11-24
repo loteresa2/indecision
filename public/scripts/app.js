@@ -75,7 +75,7 @@ var Header = function Header(props) {
       null,
       props.title
     ),
-    React.createElement(
+    props.subtitle && React.createElement(
       'h2',
       null,
       props.subtitle
@@ -184,6 +184,10 @@ var User = function User(props) {
       props.age
     )
   );
+};
+
+Header.defaultProps = {
+  title: 'Indecision app'
 };
 
 ReactDOM.render(React.createElement(Indecision, null), document.getElementById('app'));
