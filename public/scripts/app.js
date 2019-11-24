@@ -90,6 +90,23 @@ var Indecision = function (_React$Component) {
         React.createElement(AddOption, { handleAddOption: this.handleAddOption })
       );
     }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var json = localStorage.getItem('options');
+      var options = JSON.parse(json);
+      this.setState(function () {
+        return { options: options };
+      });
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevState.options.length != this.state.options.length) {
+        var json = JSON.stringify(this.state.options);
+        localStorage.setItem('options', json);
+      }
+    }
   }]);
 
   return Indecision;
