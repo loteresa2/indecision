@@ -15,6 +15,6 @@ const OptionModal = (props) => (
     </Modal>
 );
 
-Modal.setAppElement('body');
+Modal.setAppElement('#app');
 
 export default OptionModal;
